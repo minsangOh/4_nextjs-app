@@ -17,9 +17,9 @@ export function getSortedPsotsData() {
 
     return {
       id,
-      ...allpostsData(matterResult.data as { date: string; title: string }),
+      ...matterResult.data as { date: string; title: string },
     };
-  });
+  }); 
 
   // Sorting
   return allpostsData.sort((a, b) => {
