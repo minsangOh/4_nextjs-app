@@ -1,9 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import homeStyles from "@/styles/Home.module.css";
 import { GetStaticProps, NextPage } from "next";
-import { getSortedPsotsData } from "@/lib/posts";
+import { getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
 
 const Home = ({
@@ -50,7 +48,7 @@ const Home = ({
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPsotsData();
+  const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData,
