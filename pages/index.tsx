@@ -4,6 +4,7 @@ import { GetStaticProps, NextPage } from "next";
 import { getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
 
+// 홈페이지 컴포넌트를 정의합니다.
 const Home = ({
   allPostsData,
 }: {
@@ -13,6 +14,7 @@ const Home = ({
     id: string;
   }[];
 }) => {
+  // 홈페이지의 HTML 구조를 반환합니다.
   return (
     <div>
       <Head>
@@ -45,10 +47,22 @@ const Home = ({
   );
 };
 
+
+
+
+// 기본 export로 홈 컴포넌트를 정의합니다.
 export default Home;
 
+
+
+
+// 정적 속성을 생성하는 함수입니다.
 export const getStaticProps: GetStaticProps = async () => {
+  
+  // 정렬된 게시글 데이터를 가져옵니다.
   const allPostsData = getSortedPostsData();
+  
+  // 가져온 데이터를 props로 전달합니다.
   return {
     props: {
       allPostsData,
